@@ -104,27 +104,22 @@ class UserService {
   }
 }
 
-// نحوه استفاده از کلاس UserService
 
 const userService = new UserService("https://api.example.com");
 
 async function testUserService() {
   try {
-    // لاگین
     const loginData = await userService.login("username", "password");
     console.log("Login successful:", loginData);
 
-    // دریافت اطلاعات پروفایل
     const profileData = await userService.getProfile();
     console.log("Profile data:", profileData);
 
-    // آپدیت اطلاعات پروفایل
     const updatedProfile = await userService.updateProfile({
       name: "New Name",
     });
     console.log("Updated profile:", updatedProfile);
 
-    // حذف اکانت
     const deleteMessage = await userService.deleteAccount();
     console.log(deleteMessage);
   } catch (error) {
